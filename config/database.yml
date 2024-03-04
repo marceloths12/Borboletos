@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port:  <%= ENV['DATABASE_PORT'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: borboletos_development
+  template: template0
+
+test:
+  <<: *default
+  database: borboletos_test
+  template: template0
+
+production:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME"] %>

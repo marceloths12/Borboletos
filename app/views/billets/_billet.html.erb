@@ -1,0 +1,52 @@
+<div id="<%= dom_id billet %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Amount:</strong>
+    <%= billet.amount %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Expire at:</strong>
+    <%= billet.expire_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer person name:</strong>
+    <%= billet.customer_person_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer cnpj cpf:</strong>
+    <%= billet.customer_cnpj_cpf %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer state:</strong>
+    <%= billet.customer_state %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer city name:</strong>
+    <%= billet.customer_city_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer zipcode:</strong>
+    <%= billet.customer_zipcode %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer address:</strong>
+    <%= billet.customer_address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer neighborhood:</strong>
+    <%= billet.customer_neighborhood %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this billet", billet, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this billet", edit_billet_path(billet), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -53,6 +53,7 @@ group :development, :test do
   gem 'faker'
   gem 'capybara'
   gem 'webdrivers', '~> 5.0', require: false
+  gem 'shoulda-matchers', '~> 6.0'
 end
 
 group :development do

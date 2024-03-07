@@ -302,7 +302,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails (~> 2.1, >= 2.1.1)
-  factory_bot_rails
+  factory_bot_rails (~> 6.2)
   faker
   importmap-rails
   jbuilder

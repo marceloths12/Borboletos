@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    attributes:
+      billet:
+        amount: Valor
+        expire_at: 'Vencimento:'
+        customer_person_name: 'Nome:'
+        customer_cnpj_cpf: 'CPF / CNPJ:'
+        customer_state: 'Estado:'
+        customer_city_name: 'Cidade:'
+        customer_zipcode: 'CEP:'
+        customer_address: 'Endereço:'
+        customer_neighborhood: 'Bairro:'
+        customer_number: 'Nº:'
+        customer_complement: 'Complemento:'
+        external_id: 'Identificador do boleto:'

@@ -1,0 +1,8 @@
+pt-BR:
+  billets:
+    create:
+      created: O boleto foi criado com sucesso!
+    update:
+      edited: O boleto foi atualizado com sucesso!
+    destroy:
+      destroyed: O boleto foi excluido com sucesso!

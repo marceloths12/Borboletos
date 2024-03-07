@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      billet:
+        one: Boleto
+        other: Boletos
+    errors:
+      models:
+        billet:
+          attributes:
+            expire_at:
+              weekend: não pode ser no sábado ou domingo!
+              previous_date: não pode ser no passado!

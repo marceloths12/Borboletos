@@ -3,7 +3,7 @@ FactoryBot.define do
     amount { 10.21 }
     expire_at { '2025-03-05'.to_date }
     customer_person_name { "Vitor Cabreira Filho" }
-    sequence(:customer_cnpj_cpf) { |n| "5987576105#{n}"}
+    customer_cnpj_cpf { '20968985017' }
     customer_state { 'RJ' }
     customer_city_name { 'Agrestina' }
     customer_zipcode { '05318-713' }

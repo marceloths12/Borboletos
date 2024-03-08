@@ -11,3 +11,5 @@ pt-BR:
             expire_at:
               weekend: não pode ser no sábado ou domingo!
               previous_date: não pode ser no passado!
+            customer_cnpj_cpf:
+              invalid_cnpj_cpf: O CPF/CNPJ informado não é válido.

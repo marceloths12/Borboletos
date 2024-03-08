@@ -24,6 +24,19 @@ RSpec.describe Billet, type: :model do
       expect(billet).to be_invalid
       expect(billet.errors[:expire_at]).to eq(["não pode ser no passado!"])
     end
+
+    it 'if the CPF or CNPJ provided is invalid' do
+      short = build(:billet, customer_cnpj_cpf: '4688027')
+      long = build(:billet, customer_cnpj_cpf: '7947486700000139')
+
+      expect(short).to be_invalid
+      expect(long).to be_invalid
+
+      expect(short.errors[:customer_cnpj_cpf]).to eq(["é muito curto (mínimo: 11 caracteres)", "O CPF/CNPJ informado não é válido."])
+      expect(long.errors[:customer_cnpj_cpf]).to eq(["é muito longo (máximo: 14 caracteres)", "O CPF/CNPJ informado não é válido."])
+
+    end
+
   end
 
   describe 'scopes' do

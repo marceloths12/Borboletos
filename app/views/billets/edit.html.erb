@@ -1,8 +1,12 @@
+
 <div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing billet</h1>
-
-  <%= render "form", billet: @billet %>
-
-  <%= link_to "Show this billet", @billet, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to billets", billets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <div class="flex justify-between">
+    <h1 class="font-bold text-4xl"><%= t(".title") %></h1>
+    <%= link_to billets_path do %>
+      <%= content_tag :svg, class: 'w-10 h-full', viewBox: '0 0 24 24', fill: 'none' do %>
+        <%= content_tag :path, '', d: 'M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z', fill: 'currentColor' %>
+      <% end %>
+    <% end %>
+  </div>
+    <%= render "form", billet: @billet %>
 </div>

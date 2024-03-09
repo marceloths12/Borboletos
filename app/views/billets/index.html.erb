@@ -1,14 +1,18 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="flex justify-between">
+  <h2 class="text-2xl font-bold text-gray-700"><%= t('.title') %></h2>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Billets</h1>
-    <%= link_to "New billet", new_billet_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-
-  <div id="billets" class="min-w-full">
-    <%= render @billets %>
+  <%= link_to new_billet_path, class: "flex items-center max-w-44 px-4 py-2 text-gray-200 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-900" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;">
+      <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+    </svg>
+    <%= t(".new_billet")%>
+  <%end%>
+</div>
+<%= render 'search_area' %>
+<div class="px-4 py-4 -mx-4 overflow-x-auto">
+  <div class="inline-block min-w-full overflow-hidden">
+    <div class='grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-5' >
+      <%= render @billets %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,38 @@
+<%= form_with url: billets_path, method: :get, class:'grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-2' do |form| %>
+  <div class="col-span-1">
+    <%= form.label :customer_person_name, t(".customer_person_name")[0], class:"text-base" %>
+    <%= form.text_field :customer_person_name, placeholder: t(".customer_person_name")[1], value: params[:customer_person_name], class: 'w-full border-gray-500 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500' %>
+  </div>
+  <div class="col-span-1">
+    <%= form.label :customer_cnpj_cpf, t(".customer_cnpj_cpf")[0], class:"text-base" %>
+    <%= form.text_field :customer_cnpj_cpf, placeholder: t(".customer_cnpj_cpf")[1], value: params[:customer_cnpj_cpf], class: 'w-full border-gray-500 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500' %>
+  </div>
+
+  <div class="col-span-1">
+    <%= form.label :start_expire_at, t(".start_expire_at"), class:"text-base" %>
+    <%= form.date_field :start_expire_at, value: params[:start_expire_at], class: 'block w-full border-gray-500 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500' %>
+  </div>
+
+  <div class="col-span-1">
+    <%= form.label :end_expire_at, t(".end_expire_at"), class:"text-base" %>
+    <%= form.date_field :end_expire_at, value: params[:end_expire_at], class: 'block w-full border-gray-500 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500' %>
+  </div>
+ 
+  <div class="col-span-1 flex items-end">
+    <%= form.select :customer_situation, t('.situation').map{|a| a.reverse},
+                { prompt: t(".customer_situation") },  
+                class: 'block w-full border-gray-500 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500' %>
+  </div>
+
+  <div class="col-span-1 flex items-end" >
+    <%= button_tag( class: "flex items-center max-w-36 h-10 px-4 py-2 text-gray-200 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-900") do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;">
+        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+        <path d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"></path>
+      </svg>
+      <span class="mx-1"><%= t('.action')%></span>
+    <% end %>
+  </div>
+  
+<% end %>
+    

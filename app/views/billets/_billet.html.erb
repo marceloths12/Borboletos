@@ -1,52 +1,52 @@
-<div id="<%= dom_id billet %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Amount:</strong>
-    <%= billet.amount %>
-  </p>
+<div class='w-full p-6 bg-white rounded hover:shadow-md hover:bg-gray-50 text-base text-gray-600'>
+  <div class="flex justify-between py-1 text-lg ">
+    <div class="">
+      <%= billet.customer_person_name %>
+    </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Expire at:</strong>
-    <%= billet.expire_at %>
-  </p>
+    <div class="font-bold">
+      <%== t(".situation.#{billet.customer_situation}") if billet.customer_situation.present?  %>
+    </div>
+  </div>
+  
+  <div class="h-36 p-5 border-4 border-dashed border-gray-100">
+    <div class="flex justify-between">
+      <span class="text-base text-gray-600" >Id: #<%= billet.external_id %> </span>
+      <span class="text-base text-gray-600" >CPF/CNPJ:  <%= billet.customer_cnpj_cpf %> </span>
+    </div>
+    <div class="flex flex-row justify-between text-black">
+      <div class="flex flex-col justify-between font-semibold text-2xl">
+        R$ <%= number_with_precision(billet.amount, precision: 2) %>
+        <span class="text-base text-gray-600" >Valor</span>
+      </div>
+      
+      <div class="flex flex-col justify-between font-semibold text-2xl">
+        <%= l(billet.expire_at, format: :default ) %> 
+        <span class="text-base text-gray-600" >Vencimento</span>
+      </div>
+    </div>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer person name:</strong>
-    <%= billet.customer_person_name %>
-  </p>
+  <div class="w-full flex justify-between mt-2 py-1">
+    <div class="flex space-x-5">
+      <%= link_to edit_billet_path(billet) do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-black hover:fill-gray-500" width="30" height="30" viewBox="0 0 24 24"><path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z"></path></svg>
+      <% end %>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer cnpj cpf:</strong>
-    <%= billet.customer_cnpj_cpf %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer state:</strong>
-    <%= billet.customer_state %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer city name:</strong>
-    <%= billet.customer_city_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer zipcode:</strong>
-    <%= billet.customer_zipcode %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer address:</strong>
-    <%= billet.customer_address %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Customer neighborhood:</strong>
-    <%= billet.customer_neighborhood %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this billet", billet, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this billet", edit_billet_path(billet), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="fill-black hover:fill-gray-500 hover:opacity-0 " width="30" height="30" viewBox="0 0 24 24"><path d="M11 10H9v3H6v2h3v3h2v-3h3v-2h-3z"></path><path d="M4 22h12c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2zM4 8h12l.002 12H4V8z"></path><path d="M20 2H8v2h12v12h2V4c0-1.103-.897-2-2-2z"></path></svg>
+      
+      <%= link_to billet do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-black hover:fill-gray-500"width="35" height="35" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm0-2c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z"/></svg>
+      <% end %>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="fill-black hover:fill-red-400 " width="30" height="30" viewBox="0 0 24 24"><path d="M8.267 14.68c-.184 0-.308.018-.372.036v1.178c.076.018.171.023.302.023.479 0 .774-.242.774-.651 0-.366-.254-.586-.704-.586zm3.487.012c-.2 0-.33.018-.407.036v2.61c.077.018.201.018.313.018.817.006 1.349-.444 1.349-1.396.006-.83-.479-1.268-1.255-1.268z"></path><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM9.498 16.19c-.309.29-.765.42-1.296.42a2.23 2.23 0 0 1-.308-.018v1.426H7v-3.936A7.558 7.558 0 0 1 8.219 14c.557 0 .953.106 1.22.319.254.202.426.533.426.923-.001.392-.131.723-.367.948zm3.807 1.355c-.42.349-1.059.515-1.84.515-.468 0-.799-.03-1.024-.06v-3.917A7.947 7.947 0 0 1 11.66 14c.757 0 1.249.136 1.633.426.415.308.675.799.675 1.504 0 .763-.279 1.29-.663 1.615zM17 14.77h-1.532v.911H16.9v.734h-1.432v1.604h-.906V14.03H17v.74zM14 9h-1V4l5 5h-4z"></path></svg>
+    </div>
+    
+    <div>
+      <%= button_to  billet, form: { data: { turbo_confirm: t('.delete') } }, method: :delete do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-black hover:fill-red-400 " width="30" height="30" viewBox="0 0 24 24"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>
+      <% end %>
+    </div>
+  </div>
+  
 </div>

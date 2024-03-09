@@ -36,7 +36,7 @@
           </li>
         </ul>
       </li>
-      <%= link_to billets_path, class: 'flex items-center px-6 py-2 mt-4 duration-200 border-l-4 ' + (request.path == '/billets' ? "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100" : "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100") do %>
+      <%= link_to billets_path, class: 'flex items-center px-6 py-2 mt-4 duration-200 border-l-4 ' + ( request.path.include?("/billets") ? "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100" : "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100") do %>
         <%= content_tag :svg, class: 'w-5 h-full', viewBox: '0 0 24 24', fill: 'none' do %>
           <%= content_tag :path, '', d: 'M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z', fill: 'currentColor' %>
         <% end %>

@@ -1,0 +1,67 @@
+pt-BR:
+  billets:
+    index:
+      title: Boletos
+      new_billet: Novo Boleto
+    new:
+      title: Novo boleto
+      actions:
+        back: Lista de boletos
+    edit:
+      title: Editando boleto
+      actions:
+        edit: Editar este boleto
+        show: Ver informações
+        back: Lista de boletos
+    show:
+      delete: Tem certeza que deseja excluir esse boleto?
+      situation:
+        generating: "<span class='px-6 py-2 text-white bg-gray-500 rounded'>GERANDO</span>"
+        opened: "<span class='px-6 py-2 text-white bg-gray-500 rounded'>EM ABERTO</span>"
+        paid: "<span class='px-6 py-2 text-white bg-green-500 rounded'>PAGA</span>"
+        canceled: "<span class='px-6 py-2 text-white bg-red-500 rounded'>CANCELADO</span>"
+    search_area:
+      customer_person_name: 
+        - "Nome"
+        - 'Ex: Mc Lovin'
+      customer_cnpj_cpf: 
+        - "CPF / CNPJ"
+        - "Ex: 12332111100 / 11222321000111"
+      start_expire_at: 'Vencimento de:'
+      end_expire_at:  'Vencimento até:'
+      customer_situation: Situação do boleto
+      situation:
+        open: Abertos
+        paid: Pagos
+        overdue: Atrasados
+        canceled: Cancelados
+      situation_prompt: Selecione uma situação
+      action: Buscar
+    form:
+      error: Ação não autorizada.
+      amount: R$ 19.99
+      expire_at: 
+      customer_person_name: 'Ex: Mc Lovin'
+      customer_cnpj_cpf: "Ex: 123.321.111-00 / 11.222.321/0001-11"
+      customer_state:
+      customer_city_name:
+      customer_zipcode: "Ex: 60800123"
+      customer_address: 'Ex: Rua das flores'
+      customer_number: 'Ex: 22 A'
+      customer_complement: 'Ex: Em frente a praça'
+      customer_neighborhood:
+      external_id:
+    billet:
+      situation:
+        generating: "<span class='px-6 py-2 text-gray-500 rounded'>GERANDO</span>"
+        opened: "<span class='px-6 py-2 text-gray-500 rounded'>EM ABERTO</span>"
+        paid: "<span class='px-6 py-2 text-green-500 rounded'>PAGA</span>"
+        canceled: "<span class='px-6 py-2 text-red-500 rounded'>CANCELADO</span>"
+      delete: Tem certeza que deseja excluir esse boleto?
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}

@@ -16,6 +16,9 @@ class Billet < ApplicationRecord
   validate :verify_expire_at
   validate :validar_cpf_ou_cnpj
 
+  after_create :generate_billet
+  after_update :update_billet
+
   scope :by_customer_person_name, ->(name) { where('customer_person_name ILIKE ?', "%#{name}%") if name.present? }
   scope :by_customer_cnpj_cpf, ->(cnpj_cpf) { where('customer_cnpj_cpf LIKE ?', "#{cnpj_cpf}%") if cnpj_cpf.present? }
   scope :by_customer_situation, ->(situation) { where(customer_situation: situation) if situation.present? }
@@ -42,6 +45,14 @@ class Billet < ApplicationRecord
   end
 
   private
+
+  def generate_billet
+    KobanaJob.perform_now('post', self)
+  end
+
+  def update_billet
+    KobanaJob.perform_now('put', self)
+  end
 
   def validar_cpf_ou_cnpj
     unless check_cpf(customer_cnpj_cpf) || check_cnpj(customer_cnpj_cpf)

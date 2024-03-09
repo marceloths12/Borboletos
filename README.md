@@ -27,4 +27,4 @@ inicia um loop que executa o job que atualiza os status dos boletos
 ```bash
   ruby clock.rb
 ```
-## [Documentação do kobana para adquirir o token para o ambiente de sandbox.](https://developers.kobana.com.br/reference/visao-geral)
+## [Documentação da kobana.](https://developers.kobana.com.br/reference/visao-geral)

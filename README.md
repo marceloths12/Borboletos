@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versões 
+* ruby 3.3.0 e Rails 7.1.3
 
-Things you may want to cover:
 
-* Ruby version
+#### Para levantantar a a aplicação recomendo o comando
+```bash
+  bin/dev
+```
 
-* System dependencies
+####  Ou levante cada serviço separadamente:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+iniciar o servidor de desenvolvimento
+```bash
+  bin/rails server -p 3000
+```
+iniciar o watcher do Tailwind CSS
+```bash
+  bin/rails tailwindcss:watch
+```
+Iniciar o processador de jobs do GoodJob
+```bash
+  bundle exec good_job start
+```
+inicia um loop que executa o job que atualiza os status dos boletos 
+```bash
+  ruby clock.rb
+```
+## [Documentação do kobana para adquirir o token para o ambiente de sandbox.](https://developers.kobana.com.br/reference/visao-geral)

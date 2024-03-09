@@ -12,8 +12,7 @@ FactoryBot.define do
     sequence(:external_id){ |n| "123321#{n}" }
     sequence(:customer_number){ |n| "43#{n}" }
     customer_complement { 'Vizinho da casa ao lado' }
-    customer_situation { 'Open' }
-
+    customer_situation { 'opened' }
 
     trait :billet_with_faker do
       amount { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
@@ -28,7 +27,7 @@ FactoryBot.define do
       sequence(:external_id){ Faker::Number.number(digits: 4) }
       sequence(:customer_number){ Faker::Number.number(digits: 2)}
       customer_complement { 'Vizinho da casa ao lado' }
-      customer_situation { %w[Open Paid Overdue Canceled].sample }
+      customer_situation { %w[generating opened paid canceled].sample }
     end
   end
 end

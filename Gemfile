@@ -69,3 +69,5 @@ end
 
 
 gem "tailwindcss-rails", "~> 2.3"
+
+gem "good_job", "~> 3.26"

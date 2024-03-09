@@ -38,6 +38,8 @@ module Borboletos
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.active_job.queue_adapter = :good_job
+
     config.generators.system_tests = nil
   end
 end
